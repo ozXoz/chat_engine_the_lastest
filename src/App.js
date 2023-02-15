@@ -1,9 +1,7 @@
 import { ChatEngine } from 'react-chat-engine';
+
 import ChatFeed from './components/ChatFeed';
 import LoginForm from './components/LoginForm';
-
-// import ChatFeed from './components/ChatFeed';
-// import LoginForm from './components/LoginForm';
 import './App.css';
 
 const projectID = '634eeb78-d871-4ccf-b14c-1c064503001a';

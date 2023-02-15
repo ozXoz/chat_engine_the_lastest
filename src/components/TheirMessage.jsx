@@ -1,23 +1,15 @@
-const TheirMessage = ({lastMessage,message})=>{
-    const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
-    // doing this will give us the boolean value which is going to tell us  if this first message by user
+const TheirMessage = ({ lastMessage, message }) => {
+  const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
 
-    return(
-            // This is only if we have the first msg by the user
-        <div className="message-row">
-        {/* if is first msg by user and if it is you can use    */}
-            {isFirstMessageByUser && (
-                <div 
-                
-                className="message-avatar"
-                style={{backgroundImage:`url(${message?.sender?.avatar})`}}
-                
-                />
-
-                
-            )}
-
-{message.attachments && message.attachments.length > 0
+  return (
+    <div className="message-row">
+      {isFirstMessageByUser && (
+        <div
+          className="message-avatar"
+          style={{ backgroundImage: message.sender && `url(${message.sender.avatar})` }}
+        />
+      )}
+      {message.attachments && message.attachments.length > 0
         ? (
           <img
             src={message.attachments[0].file}
@@ -31,8 +23,8 @@ const TheirMessage = ({lastMessage,message})=>{
             {message.text}
           </div>
         )}
-        </div>
-    )
-}
+    </div>
+  );
+};
 
 export default TheirMessage;
