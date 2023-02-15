@@ -1,8 +1,8 @@
-import {userState} from 'react';
+import {useState} from 'react';
 import { sendMessage,isTyping } from 'react-chat-engine';
 import {SendOutlined,PictureOutlined} from '@ant-design/icons'
 const MessageForm = (props)=>{
-    const[value,setValue]=userState('');
+    const[value,setValue]=useState('');
     const {chatId,creds}=props;
     // Every handle submit in react u have to add event 
     const handleSubmit = (event)=>{
